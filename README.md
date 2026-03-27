@@ -13,6 +13,7 @@ cd infrastructure
 docker compose pull
 docker compose run
 ```
+And a bit of luck.
 
 ## Creando tu propio RAG
 El código de tu RAG puede vivir en cualquier carpeta fuera de infrastructure e incluso fuera del repositorio. La carpeta `seven_wonders` tiene un ejemplo de RAG sencillo usando HayStack pero pueden crearse RAGs usando cualquier otra librería como LlamaIndex o LangChain. Sigue por el camino de tu arcoiris 🌈.
