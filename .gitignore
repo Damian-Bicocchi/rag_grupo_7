@@ -7,3 +7,5 @@ infrastructure/env/pipelines.env
 infrastructure/env/vdb.env
 infrastructure/.env
 .env
+*.env
+
