@@ -15,7 +15,8 @@ from haystack_integrations.components.generators.ollama import OllamaGenerator
 
 # --- CONFIGURACION ---
 EMBEDDING_MODEL = "bge-m3"
-GENERATION_MODEL = "ministral-3:3b"
+#GENERATION_MODEL = "ministral-3:3b"
+GENERATION_MODEL = "qwen3.5:9b"
 OLLAMA_BASE_URL = "http://localhost:11434"
 DATA_DIR = Path(__file__).parent / "data"
 

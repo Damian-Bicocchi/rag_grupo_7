@@ -17,3 +17,7 @@ And a bit of luck.
 
 ## Creando tu propio RAG
 El código de tu RAG puede vivir en cualquier carpeta fuera de infrastructure e incluso fuera del repositorio. La carpeta `seven_wonders` tiene un ejemplo de RAG sencillo usando HayStack pero pueden crearse RAGs usando cualquier otra librería como LlamaIndex o LangChain. Sigue por el camino de tu arcoiris 🌈.
+
+## Rag para consultas de materias médicas
+* Armamos este RAG para tratar de dar una asistencia a las/os estudientes de Medicina en el estudio de materias con mucho contenido
+* Esta entrega por ahora solo responde cuestiones acerca de la materia de Microbiología
