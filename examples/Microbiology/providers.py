@@ -6,9 +6,25 @@ from haystack_integrations.components.embedders.ollama import (
 from haystack_integrations.components.generators.ollama import OllamaGenerator
 import hashlib
 import os
+from haystack.utils import Secret
 
-# nO ANDA
-conn_str = f"postgresql://{os.getenv('POSTGRES_USER')}:{os.getenv('POSTGRES_PASSWORD')}@{os.getenv('VDB_HOST')}:{os.getenv('VDB_PORT')}/{os.getenv('POSTGRES_DB')}"
+from dotenv import load_dotenv
+
+
+load_dotenv("../infrastructure/env/vdb.env") 
+
+# Ahora os.getenv ya no devolverá None
+user = os.getenv('PGVECTOR_USR')
+password = os.getenv('PGVECTOR_PASS')
+host = os.getenv('VDB_HOST', 'localhost') 
+port = os.getenv('VDB_PORT', '5433')      
+db = os.getenv('PGVECTOR_DB')
+
+conn_str = f"postgresql://{user}:{password}@{host}:{port}/{db}"
+
+
+conn_str = f"postgresql://{os.getenv('PGVECTOR_USR')}:{os.getenv('PGVECTOR_PASS')}@{os.getenv('VDB_HOST')}:{os.getenv('VDB_PORT')}/{os.getenv('PGVECTOR_DB')}"
+
 
 EMBEDDING_MODEL = "bge-m3"
 GENERATION_MODEL = "qwen3.5:9b"
@@ -25,7 +41,7 @@ def get_document_store():
         embedding_dimension=1024,
         vector_function="cosine_similarity",
         recreate_table=False,
-        connection_string=conn_str
+        connection_string=Secret.from_token(conn_str)
     )
 
 

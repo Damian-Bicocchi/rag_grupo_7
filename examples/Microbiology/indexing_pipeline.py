@@ -97,7 +97,9 @@ docs_with_embeddings = result["embedder"]["documents"]
 
 # Agregamos como metadata un hash
 for doc in docs_with_embeddings:
-    doc.meta["file_hash"] = file_hash(doc.meta["source"])
+    source_path = doc.meta.get("file_path") or doc.meta.get("source")
+    if source_path:
+        doc.meta["file_hash"] = file_hash(source_path)
 
 document_store.write_documents(docs_with_embeddings)
 
