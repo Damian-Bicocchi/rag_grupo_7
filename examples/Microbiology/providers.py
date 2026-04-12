@@ -22,7 +22,7 @@ conn_str = f"postgresql://{user}:{password}@{host}:{port}/{db}"
 
 
 EMBEDDING_MODEL = "bge-m3"
-GENERATION_MODEL = "qwen3.5:0.8b"
+GENERATION_MODEL = "qwen3.5:9b"
 OLLAMA_BASE_URL = "http://localhost:11434"
 SECONDS_TIMEOUT = 91218
 

@@ -5,19 +5,13 @@ description: Pipeline de Haystack para microbiología médica.
 version: 1.0
 requirements: haystack-ai, ollama-haystack, pypdf
 """
-import os
 from pathlib import Path
 
 from haystack import Pipeline
-from haystack.document_stores.in_memory import InMemoryDocumentStore
-from haystack.components.retrievers.in_memory import InMemoryEmbeddingRetriever
-from haystack.components.builders import PromptBuilder
 from haystack.components.converters import PyPDFToDocument, TextFileToDocument
 from haystack.components.preprocessors import DocumentSplitter
 from haystack.components.routers import FileTypeRouter
 from haystack.components.joiners import DocumentJoiner
-from haystack_integrations.components.embedders.ollama import OllamaTextEmbedder, OllamaDocumentEmbedder
-from haystack_integrations.components.generators.ollama import OllamaGenerator
 from providers import get_document_store, get_doc_embedder, file_hash
 from pathlib import Path
 
