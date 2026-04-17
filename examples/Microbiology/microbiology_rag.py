@@ -71,6 +71,4 @@ while True:
 
     print("\nRespuesta:")
     print(results["llm"]["replies"][0])
-    print(f"{results["prompt_builder"]["prompt"]} results[prompt_builder]")
-    print(f"{results["llm"]} llm")
     print("-" * 60 + "\n")
